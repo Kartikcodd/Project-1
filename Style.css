@@ -1,0 +1,386 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fff;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    /* cursor: none; */
+    /* perspective:800px; */
+
+}
+
+/* cursor */
+#cursor{
+    height: 20px;
+    width: 20px;
+    position:fixed;
+    background-color: #95C11E;
+    border-radius: 50%;
+    z-index: 99;
+}
+#cursor-blur{
+    height: 300px;
+    width: 300px;
+    position:fixed;
+    background-color: #96c11e34;
+    border-radius: 50%;
+    z-index: 9;
+    filter: blur(50px);
+}
+
+#nav{
+    height: 130px;
+    width: 100%;
+    /* background-color: red ; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding:0 150px;
+    gap: 45px;
+    position: fixed;
+    z-index: 99;
+}
+
+#nav img{
+    height: 75px;
+}
+
+#nav h5{
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+video{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+
+}
+
+#main{
+position: relative;
+background-color: rgba(0, 0, 0, 0.356);
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    /* background-color: red; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 h2{
+    font-size: 100px;
+    font-weight: 900;
+    /* text-shadow: #fff; */
+    position: relative;
+}
+
+#page1 h2::before{
+    content: "EAT. DRINK. PLAY";
+    position: absolute;
+    color: #000;
+    top: -5px;
+    left: -5px;
+    -webkit-text-stroke: 2px #95C11E;
+    z-index: -1;
+
+}
+#page1 h3{
+    font-size: 33px;   
+    font-weight: 200;
+    margin: 10px 0;
+}
+#page1 p{
+    font-size: 20px;
+    width: 40%;
+
+}
+
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+
+#scroller{
+    /* background-color: red; */
+   white-space: nowrap ;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in{
+    display: inline-block;
+    white-space: none;
+    animation-name: scroll;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+#scroller h4{
+    display: inline-block;
+    font-size: 120px;
+    font-weight: 900;
+    /* font-family: gilroy; */
+    margin-right: 10px;
+    -webkit-text-stroke: 2px #95C11E;
+    color: transparent;
+    text-transform: uppercase;
+    transition: all linear 0.4s;    
+}
+#scroller h4:hover{
+    color: #95C11E;
+}
+    
+
+@keyframes scroll{
+    from{
+        transform: translatex(0%);
+    }
+    to{
+        transform: translate(-100%);
+    }
+}
+
+#about{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: red; */
+    padding: 0 35px;
+    position: relative;
+    z-index:10; 
+}
+#about img{
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+#about-us-in{
+width: 40%;
+text-align: center;
+}
+
+#about-us-in h3{
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 30px;
+
+}
+
+#about-us-in p{
+    font-size: 18px;
+    line-height: 25px;
+}
+
+#card-container{
+    height: 60vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+    transition: all ease .6s;
+}
+
+.card{
+    height: 80%;
+    border-radius:20px;
+    width: 24%;
+    background-color: blue;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+}
+
+#card1{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card2{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card3{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+#overlays{
+    background-color: #95C11E;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    padding-top: 60px;
+    opacity: 0;
+    transition: all ease 0.5s;
+    /* white-space: nowrap; */
+    
+
+}
+#overlays h4{
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #000;
+    font-size: 40px;
+}
+#overlays p{
+    font-size: 18px;
+    color: #000;
+}
+
+.card:hover #overlays{
+    opacity: 100%;
+}
+
+.card:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+
+#green-dev{
+    height: 40vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 0 20px; */
+    background:linear-gradient(to left bottom,#95C11E,rgb(61, 128, 7));
+
+
+}
+
+#green-dev img{
+    height: 100%;
+    object-fit: cover;
+    width: 14%;
+}
+#green-dev h4{
+    width: 45%;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #000;
+    font-weight: 600;
+}
+
+#page-3{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    position: relative;
+}
+
+#page-3>p{
+    width: 60%;
+    font-size: 35px;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 500;
+}
+#page-3 img{
+    height: 60px;
+    object-fit: cover;
+    /* width: 14px; */
+    position: absolute;
+
+}
+#page-3 #colon1{
+    left: 12%;
+    top: 21%;
+}
+#page-3 #colon2{
+    right: 11%;
+    bottom: 27%;
+}
+
+#page-4{
+    height: 40vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    /* overflow: hidden; */
+    justify-content: center;
+    gap: 50px;
+    position: relative;
+
+}
+
+.box{
+    height: 60%;
+    width: 26%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    transition: all ease 0.5s;
+}
+
+.box h2{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: #000;
+    font-weight: 800;
+    text-transform: uppercase;
+    position: absolute;
+    z-index:10;
+    transition: all ease 0.5s;
+}
+
+.box img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+    scale:1.1;
+    transition: all ease 0.5s;
+}
+
+.box:hover h2{
+    color: #fff;
+    background-color: transparent;
+}
+.box:hover img{
+    scale: 1;
+}
+
+#page-4>h2{
+    font-size: 80px;
+    position: absolute;
+    top:-3%;
+    font-weight: 900;
+    color: #000;
+    -webkit-text-stroke: 2px #fff;
+}
